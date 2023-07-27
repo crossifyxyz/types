@@ -1,5 +1,5 @@
+import { Route } from '@lifi/types'
 import type { PagedList } from './'
-import { LifiRouteRecord } from './lifi'
 
 export enum TransactionType {
   LIFI = 'LIFI',
@@ -34,7 +34,7 @@ export interface Transaction {
   address: string
   toAddress?: string
   idle: boolean
-  route?: LifiRouteRecord
+  route?: Route
 }
 
 export type TransactionPostResponse = Omit<

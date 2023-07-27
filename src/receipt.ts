@@ -1,3 +1,4 @@
+import { Route } from '@lifi/types'
 import type {
   PagedList,
   Token,
@@ -5,7 +6,6 @@ import type {
   TransactionStatus,
   TransactionType,
 } from './'
-import { LifiRouteRecord } from './lifi'
 
 export interface Receipt {
   // Identifiers
@@ -62,7 +62,7 @@ export interface ReceiptPostRequest
   > {
   txScenario: TransactionScenario
   txType: TransactionType
-  route?: LifiRouteRecord
+  route?: Route
 }
 
 export type ReceiptUpdateRequest = Partial<ReceiptPostRequest>

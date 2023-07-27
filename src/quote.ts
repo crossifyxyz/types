@@ -1,4 +1,5 @@
-import { LifiRouteRecord, Token } from '.'
+import { Route } from '@lifi/types'
+import { Token } from '.'
 import { TransactionType } from './transaction'
 
 export type QuoteRequest = {
@@ -49,7 +50,7 @@ export type QuoteBase = {
 
 export type QuoteLifi = QuoteBase & {
   transactionType: TransactionType.LIFI
-  route: LifiRouteRecord
+  route: Route
 }
 
 export type QuoteEVM = QuoteBase & {
@@ -57,4 +58,4 @@ export type QuoteEVM = QuoteBase & {
   transactionRequest: EthersTransactionRequest
 }
 
-export type CrossifyQuote = QuoteLifi | QuoteEVM
+export type Quote = QuoteLifi | QuoteEVM
