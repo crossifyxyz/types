@@ -1,10 +1,10 @@
-import { Route } from '@lifi/types'
 import type {
   PagedList,
   Token,
   TransactionScenario,
   TransactionStatus,
   TransactionType,
+  Route,
 } from './'
 
 export interface Receipt {
@@ -46,6 +46,11 @@ export interface Receipt {
   // Date
   date: number
 }
+
+export type ReceiptPrep = Omit<
+  ReceiptPostRequest,
+  'txHash' | 'txType' | 'gasFeeUSD' | 'percentagePlatformFee' | 'txScenario'
+>
 
 export interface ReceiptPostRequest
   // eslint-disable-next-line prettier/prettier

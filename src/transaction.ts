@@ -1,5 +1,4 @@
-import { Route } from '@lifi/types'
-import type { PagedList } from './'
+import type { PagedList, SterilRoute } from './'
 
 export enum TransactionType {
   LIFI = 'LIFI',
@@ -34,10 +33,10 @@ export interface Transaction {
   address: string
   toAddress?: string
   idle: boolean
-  route?: Route
+  route?: SterilRoute
 }
 
-export type TransactionPostResponse = Omit<
+export type TransactionPostRequest = Omit<
   Transaction,
   'uid' | 'idle' | 'date' | 'status'
 >
@@ -52,4 +51,4 @@ export interface CheckTransactionRequest {
 
 export type TransactionResponse = Transaction
 
-export type PagedTransactionResponseDTO = PagedList<TransactionResponse>
+export type PagedTransactionResponse = PagedList<TransactionResponse>

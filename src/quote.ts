@@ -1,6 +1,4 @@
-import { Route } from '@lifi/types'
-import { Token } from '.'
-import { TransactionType } from './transaction'
+import { Token, TransactionType, SterilRoute } from '.'
 
 export type QuoteRequest = {
   fromChain: number
@@ -45,17 +43,23 @@ export type QuoteBase = {
       amountUSD: number
     }
   }
-  transactionType: TransactionType
 }
 
 export type QuoteLifi = QuoteBase & {
   transactionType: TransactionType.LIFI
-  route: Route
+  route: SterilRoute
+  transactionRequest?: undefined
 }
 
 export type QuoteEVM = QuoteBase & {
-  transactionType: Exclude<TransactionType, TransactionType.LIFI>
+  transactionType:
+    | TransactionType.APPROVE
+    | TransactionType.ERC20
+    | TransactionType.NATIVE // You might need to adjust this based on your TransactionType definition
   transactionRequest: EthersTransactionRequest
+  route?: undefined
 }
 
 export type Quote = QuoteLifi | QuoteEVM
+
+export type QuoteResponse = Quote

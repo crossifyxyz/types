@@ -58,12 +58,12 @@ export interface Payment {
 }
 
 // REQUESTS
-export type PaymentCreationRequest = Omit<
+export type PaymentPostRequest = Omit<
   Payment,
   'status' | 'uid' | 'date' | 'creatorAddress' | 'visitCount'
 >
 
-export interface PaymentUpdateRequest extends Partial<PaymentCreationRequest> {
+export interface PaymentUpdateRequest extends Partial<PaymentPostRequest> {
   status?: PaymentStatus
 }
 
