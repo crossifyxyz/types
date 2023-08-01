@@ -1,4 +1,4 @@
-import type { PagedList, Token } from './'
+import type { Currency, PagedList, Token } from './'
 
 // OPTIONS
 export enum PaymentType {
@@ -15,11 +15,6 @@ export enum PaymentStatus {
   DELETED = 'DELETED',
 }
 
-export enum PaymentCurrency {
-  FIAT = 'FIAT',
-  TOKEN = 'TOKEN',
-}
-
 // DATA TYPES
 export interface Payment {
   uid: string
@@ -29,11 +24,7 @@ export interface Payment {
   imageURL?: string
   status: PaymentStatus
   // Price Data
-  currency: {
-    currencyType: PaymentCurrency
-    fiat?: string // Ex. USD / TRY
-    amount: number // Raw Amount (Ex. 1.5)
-  }
+  currency: Currency
   // Tx Data
   chainId: number
   tokenAddress: string

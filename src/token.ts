@@ -1,15 +1,29 @@
-export interface Token {
+import { ChainId, CoinKey } from '.'
+
+export interface BaseToken {
+  chainId: ChainId
   address: string
+}
+export interface StaticToken extends BaseToken {
   symbol: string
   decimals: number
-  chainId: number
   name: string
-  priceUSD?: string
+  coinKey?: CoinKey
   logoURI?: string
 }
+export interface Token extends StaticToken {
+  priceUSD: string
+}
+export interface TokenAmount extends Token {
+  amount: string
+  amountUSD?: string
+  blockNumber?: number
+}
+
+export type Tokens = Record<number, Token[]>
 
 export type TokenRequest = { chainId?: number; tokenAddress?: string }
 
 export type TokenResponse = Token
 
-export type TokensResponse = Record<string, Token[]>
+export type TokensResponse = Tokens

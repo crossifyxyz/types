@@ -45,4 +45,4 @@ npm install --save @crossifyxyz/types
 
 ## Summary
 
-This package contains type definitions for LI.FI projects (https://github.com/crossifyxyz).
+This package contains type definitions for CROSSIFY projects (https://github.com/crossifyxyz).

@@ -10,6 +10,7 @@
     "import": "./dist/index.js"
   },
   "scripts": {
+    "dev": "nodemon",
     "watch": "tsc -w -p ./tsconfig.json",
     "build": "node tools/cleanup types && tsc -p ./tsconfig.json && tsc -p ./tsconfig.cjs.json",
     "clean": "node tools/cleanup",
@@ -88,7 +89,8 @@
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.7",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "nodemon": "^2.0.20"
   },
   "directories": {
     "test": "test"
