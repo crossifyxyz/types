@@ -1,4 +1,5 @@
-import type { ChainKey, CoinKey, Token } from '.'
+export * from './wagmi'
+import type { ChainKey, CoinKey, ExtendedWagmiChain, Token } from '..'
 
 export enum ChainType {
   EVM = 'EVM',
@@ -16,10 +17,7 @@ export interface ChainBase {
   faucetUrls?: string[]
 }
 
-export interface SolanaChain extends ChainBase {
-  chainType: ChainType.Solana
-}
-
+//==========EVM===========
 export interface EVMChain extends ChainBase {
   chainType: ChainType.EVM
   tokenlistUrl?: string
@@ -38,21 +36,21 @@ export interface AddEthereumChainParameter {
   rpcUrls: string[]
 }
 
-export type PreExtendChain = EVMChain | SolanaChain
-
-export type ExtendedChain = PreExtendChain & {
+export interface ExtendedEVMChain extends EVMChain {
   nativeToken: Token
 }
 
-export interface ExtendedEVMChain extends EVMChain {
-  nativeToken: Token
+//==========SOLANA===========
+export interface SolanaChain extends ChainBase {
+  chainType: ChainType.Solana
 }
 
 export interface ExtendedSolanaChain extends SolanaChain {
   nativeToken: Token
 }
 
-export type Chain = ExtendedChain
+//==========RESULT===========
+export type Chain = ExtendedEVMChain | ExtendedSolanaChain
 
 export type ChainMeta = {
   name: string
@@ -60,6 +58,9 @@ export type ChainMeta = {
   blockExplorer: { name: string; url: string }
 }
 
-export type Chains = Chain[]
-
-export type ChainsResponse = Chains
+//=================REQUEST/RESPONSE=================
+// REQUESTS
+export type ChainsResponse = {
+  crossify: Chain[]
+  wagmi: ExtendedWagmiChain[]
+}

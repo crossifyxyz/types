@@ -36,6 +36,8 @@ export interface Transaction {
   route?: SterilRoute
 }
 
+//=================REQUEST/RESPONSE=================
+// REQUESTS
 export type TransactionPostRequest = Omit<
   Transaction,
   'uid' | 'idle' | 'date' | 'status'
@@ -48,7 +50,7 @@ export interface CheckTransactionRequest {
   receiptId?: string
   status?: TransactionStatus
 }
-
+// RESPONSES
 export type TransactionResponse = Transaction
 
 export type PagedTransactionResponse = PagedList<TransactionResponse>

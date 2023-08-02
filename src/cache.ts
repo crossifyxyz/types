@@ -1,4 +1,4 @@
-import { Tokens, FiatRate, Chains } from './'
+import { Tokens, FiatRate, Chain, ExtendedWagmiChain } from './'
 
 export enum CacheType {
   CHAINS = 'CHAINS',
@@ -13,7 +13,10 @@ export interface CacheBase {
 
 export interface ChainsCache extends CacheBase {
   type: CacheType.CHAINS
-  data: Chains
+  data: {
+    crossify: Chain[]
+    wagmi: ExtendedWagmiChain[]
+  }
 }
 
 export interface TokensCache extends CacheBase {

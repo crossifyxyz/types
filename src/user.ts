@@ -28,12 +28,13 @@ export interface User {
   apiKey?: string
 }
 
+//=================REQUEST/RESPONSE=================
+// REQUESTS
 export type UserUpdateRequest = Partial<Omit<User, 'date' | 'uid' | 'role'>>
 
+// RESPONSES
 export type UserResponse = Omit<User, 'apiKey'>
-
 export type PagedUserResponse = PagedList<UserResponse>
-
 export type WalletBalancesResponse = {
   raw: TokenAmount[]
   byChain: Record<number, TokenAmount[]>

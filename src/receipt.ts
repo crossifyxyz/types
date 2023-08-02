@@ -52,6 +52,8 @@ export type ReceiptPrep = Omit<
   'txHash' | 'txType' | 'gasFeeUSD' | 'percentagePlatformFee' | 'txScenario'
 >
 
+//=================REQUEST/RESPONSE=================
+// REQUESTS
 export interface ReceiptPostRequest
   // eslint-disable-next-line prettier/prettier
   extends Omit<
@@ -71,6 +73,8 @@ export interface ReceiptPostRequest
 }
 
 export type ReceiptUpdateRequest = Partial<ReceiptPostRequest>
+
+// RESPONSES
 
 export interface ReceiptResponse extends Receipt {
   toToken: Token

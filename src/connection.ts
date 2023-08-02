@@ -1,5 +1,9 @@
 import { Connection as LifiConnection } from '@lifi/types'
 
+export type Connection = LifiConnection
+
+//=================REQUEST/RESPONSE=================
+// REQUESTS
 export type ConnectionsRequest = {
   fromChain?: number
   fromToken?: string
@@ -7,6 +11,5 @@ export type ConnectionsRequest = {
   toToken?: string
 }
 
-export type Connection = LifiConnection
-
+// RESPONSES
 export type ConnectionsResponse = Connection[]

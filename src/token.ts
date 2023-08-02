@@ -22,8 +22,11 @@ export interface TokenAmount extends Token {
 
 export type Tokens = Record<number, Token[]>
 
+//=================REQUEST/RESPONSE=================
+// REQUESTS
 export type TokenRequest = { chainId?: number; tokenAddress?: string }
 
+// RESPONSES
 export type TokenResponse = Token
 
 export type TokensResponse = Tokens

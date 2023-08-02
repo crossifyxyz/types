@@ -48,6 +48,8 @@ export interface Payment {
   date: number
 }
 
+//=================REQUEST/RESPONSE=================
+
 // REQUESTS
 export type PaymentPostRequest = Omit<
   Payment,
