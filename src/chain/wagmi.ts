@@ -1,4 +1,4 @@
-type Address = string
+type Address = `0x${string}`
 type BlockExplorer = {
   name: string
   url: string
@@ -32,7 +32,7 @@ export type WagmiChain = {
   /** Flag for test networks */
   testnet?: boolean
 }
-type Contract = {
+export type Contract = {
   address: Address
   blockCreated?: number
 }
@@ -47,7 +47,7 @@ type RpcUrls = {
   webSocket?: readonly string[]
 }
 
-interface RainbowKitChain {
+export interface RainbowKitChain {
   id: number
   iconUrl?: string | null
   iconBackground?: string

@@ -1,5 +1,6 @@
 export * from './wagmi'
 import type { ChainKey, CoinKey, ExtendedWagmiChain, Token } from '..'
+import { SterilExtendedWagmiChain } from '../sterilize'
 
 export enum ChainType {
   EVM = 'EVM',
@@ -59,8 +60,13 @@ export type ChainMeta = {
 }
 
 //=================REQUEST/RESPONSE=================
-// REQUESTS
-export type ChainsResponse = {
+// RESPONSE
+export interface SterilChainsResponse {
+  crossify: Chain[]
+  wagmi: SterilExtendedWagmiChain[]
+}
+
+export interface ChainsResponse {
   crossify: Chain[]
   wagmi: ExtendedWagmiChain[]
 }

@@ -1,7 +1,7 @@
 export interface FiatRate {
   base: string
   date: string
-  rates: Record<string, number>
+  rates: { [key: string]: number }
   success: boolean
   timestamp: number
 }

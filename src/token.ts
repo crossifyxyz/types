@@ -20,7 +20,9 @@ export interface TokenAmount extends Token {
   blockNumber?: number
 }
 
-export type Tokens = Record<number, Token[]>
+export interface Tokens {
+  [key: string]: Token[]
+}
 
 //=================REQUEST/RESPONSE=================
 // REQUESTS
@@ -29,4 +31,6 @@ export type TokenRequest = { chainId?: number; tokenAddress?: string }
 // RESPONSES
 export type TokenResponse = Token
 
-export type TokensResponse = Tokens
+export interface TokensResponse {
+  [key: string]: Token[]
+}
