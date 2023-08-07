@@ -1,3 +1,4 @@
+import { TokenAmount } from '@lifi/types'
 import { Tokens, FiatRate, Chain, ExtendedWagmiChain } from './'
 
 export enum CacheType {
@@ -9,6 +10,10 @@ export enum CacheType {
 export interface CacheBase {
   type: CacheType
   updatedAt: number
+}
+
+export interface TokenBalancesCache extends Omit<CacheBase, 'type'> {
+  data: TokenAmount[]
 }
 
 export interface ChainsCache extends CacheBase {

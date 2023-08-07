@@ -1,4 +1,10 @@
-import type { PagedList, CurrencyType, TokenAmount, StaticToken } from './'
+import type {
+  PagedList,
+  CurrencyType,
+  StaticToken,
+  TokenAmount,
+  TokenBalancesCache,
+} from './'
 
 export enum UserStatus {
   ACTIVE = 'ACTIVE',
@@ -21,13 +27,16 @@ export interface User {
   userName?: string
   displayName?: string
   email?: string
-  // chainId?: number
+  // chainId: number
+  tokenBalances?: TokenBalancesCache
   token?: StaticToken
   currency: CurrencyType
   date: number
   status: UserStatus
   apiKey?: string
 }
+
+export type TokenBalances = TokenAmount[]
 
 //=================REQUEST/RESPONSE=================
 // REQUESTS
@@ -36,12 +45,14 @@ export type UserUpdateRequest = Partial<
 >
 
 // RESPONSES
-export type UserResponse = Omit<User, 'apiKey'>
+export type TokenBalancesResponse = TokenBalances
 
-export type PagedUserResponse = PagedList<UserResponse>
-
-export interface WalletBalancesResponse {
-  raw: TokenAmount[]
+export interface NestedTokenBalancesResponse {
+  raw: TokenBalances
   byChain: { [key: string]: TokenAmount[] }
   byChainAddress: { [key: string]: { [key: string]: TokenAmount } }
 }
+
+export type UserResponse = Omit<User, 'apiKey'>
+
+export type PagedUserResponse = PagedList<UserResponse>
