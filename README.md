@@ -29,7 +29,7 @@ yarn add @crossify/types
 or
 
 ```bash
-npm install --save @crossify/types
+npm install -D --save @crossify/types
 ```
 
 ## How to make a release

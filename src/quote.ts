@@ -1,11 +1,12 @@
-import { Token, TransactionType, SterilRoute } from '.'
+import { Token, TransactionType, SterilRoute, Currency } from '.'
 
 export type QuoteRequest = {
   fromChain: number
   toChain: number
   fromToken: string
   toToken: string
-  fromAmount: string
+  fromAmount?: string
+  currency?: Currency
   fromAddress: string
   toAddress?: string
 }
@@ -39,6 +40,7 @@ export type QuoteBase = {
   estimate: {
     executionDuration: number
     fromAmountUSD: number
+    toAmountUSD?: number
     gasCost: {
       amountUSD: number
     }
