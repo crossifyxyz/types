@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/crossifyxyz/types/compare/v0.0.3...v0.0.4) (2023-08-22)
+
+
+### Bug Fixes
+
+* type mismatch and dev ops ([89878dd](https://github.com/crossifyxyz/types/commit/89878dd4512b4825835e23015a4379cf943f59fd))
+
 ### [0.0.3](https://github.com/crossifyxyz/types/compare/v0.0.2...v0.0.3) (2023-08-22)
 
 ### [0.0.2](https://github.com/crossifyxyz/types/compare/v0.0.1...v0.0.2) (2023-08-11)
