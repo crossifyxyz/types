@@ -1,7 +1,7 @@
 ### Installation
 
 ```
-npm i -D --save @crossify/types
+npm i @crossify/types
 ```
 
 ### Summary
