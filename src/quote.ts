@@ -1,16 +1,5 @@
 import { Token, TransactionType, SterilRoute, Currency } from '.'
 
-export type QuoteRequest = {
-  fromChain: number
-  toChain: number
-  fromToken: string
-  toToken: string
-  fromAmount?: string
-  currency?: Currency
-  fromAddress: string
-  toAddress?: string
-}
-
 export type EthersTransactionRequest = {
   data: string
   to: string
@@ -64,4 +53,26 @@ export type QuoteEVM = QuoteBase & {
 
 export type Quote = QuoteLifi | QuoteEVM
 
+//===============REQUEST/RESPONSE=====================
+
+// REQUEST
+export interface BaseQuoteRequest {
+  fromChain: number
+  toChain: number
+  fromToken: string
+  toToken: string
+  fromAddress: string
+  toAddress?: string
+}
+
+export interface CurrencyQuoteRequest extends BaseQuoteRequest {
+  currency: Currency
+}
+export interface ParsedAmountQuoteRequest extends BaseQuoteRequest {
+  fromAmount: string
+}
+
+export type QuoteRequest = CurrencyQuoteRequest | ParsedAmountQuoteRequest
+
+// RESPONSE
 export type QuoteResponse = Quote

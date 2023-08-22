@@ -1,5 +1,5 @@
 export * from './wagmi'
-import type { ChainKey, CoinKey, ExtendedWagmiChain, Token } from '..'
+import type { ChainId, ChainKey, CoinKey, ExtendedWagmiChain, Token } from '..'
 import { SterilExtendedWagmiChain } from '../sterilize'
 
 export enum ChainType {
@@ -12,7 +12,7 @@ export interface ChainBase {
   chainType: ChainType
   name: string
   coin: CoinKey
-  id: number
+  id: ChainId
   mainnet: boolean
   logoURI?: string
   faucetUrls?: string[]

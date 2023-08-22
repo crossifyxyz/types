@@ -27,7 +27,8 @@
     "prepublishOnly": "run-s build use:npmReadme && pinst --enable",
     "postpublish": "npm run use:gitReadme && pinst --enable",
     "prepare": "husky install",
-    "release": "standard-version"
+    "release": "standard-version",
+    "postRelease": "git push --follow-tags origin main"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [

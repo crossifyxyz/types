@@ -18,10 +18,7 @@ export interface TokenBalancesCache extends Omit<CacheBase, 'type'> {
 
 export interface ChainsCache extends CacheBase {
   type: CacheType.CHAINS
-  data: {
-    crossify: Chain[]
-    wagmi: ExtendedWagmiChain[]
-  }
+  data: Chain[]
 }
 
 export interface TokensCache extends CacheBase {
