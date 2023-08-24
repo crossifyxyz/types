@@ -49,6 +49,7 @@ export interface CheckTransactionRequest {
   type: TransactionType
   receiptId?: string
   status?: TransactionStatus
+  retry?: boolean | string
 }
 // RESPONSES
 export type TransactionResponse = Transaction

@@ -8,6 +8,7 @@ export enum PaymentType {
 }
 
 export enum PaymentStatus {
+  PENDING = 'PENDING',
   AWAITING = 'AWAITING',
   OPEN = 'OPEN',
   COMPLETED = 'COMPLETED',
