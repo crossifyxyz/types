@@ -2,9 +2,8 @@ import type { Currency, PagedList, Token } from './'
 
 // OPTIONS
 export enum PaymentType {
-  POS = 'POS',
-  PRODUCT = 'PRODUCT',
-  DONATION = 'DONATION',
+  SINGLE = 'SINGLE',
+  MULTIPLE = 'MULTIPLE',
 }
 
 export enum PaymentStatus {
@@ -21,6 +20,7 @@ export interface Payment {
   uid: string
   creatorAddress: string
   type: PaymentType
+  advanced: boolean
   title?: string
   imageURL?: string
   status: PaymentStatus

@@ -53,6 +53,8 @@ export interface NestedTokenBalancesResponse {
   byChainAddress: { [key: string]: { [key: string]: TokenAmount } }
 }
 
+export type MeResponse = User
+
 export type UserResponse = Omit<User, 'apiKey'>
 
 export type PagedUserResponse = PagedList<UserResponse>
