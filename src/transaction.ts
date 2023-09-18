@@ -1,4 +1,4 @@
-import type { PagedList, SterilRoute } from './'
+import type { PagedList, SterilRoute } from '.'
 
 export enum TransactionType {
   LIFI = 'LIFI',

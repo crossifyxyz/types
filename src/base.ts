@@ -9,3 +9,8 @@ export type ChainId = LifiChainId
 export type ChainKey = LifiChainKey
 
 export type CoinKey = LifiCoinKey
+
+export enum ChainType {
+  EVM = 'EVM',
+  SOL = 'SOL',
+}

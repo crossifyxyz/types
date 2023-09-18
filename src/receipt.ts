@@ -5,7 +5,7 @@ import type {
   TransactionStatus,
   TransactionType,
   Route,
-} from './'
+} from '.'
 
 export interface Receipt {
   // Identifiers

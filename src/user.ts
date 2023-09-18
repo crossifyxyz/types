@@ -4,7 +4,8 @@ import type {
   StaticToken,
   TokenAmount,
   TokenBalancesCache,
-} from './'
+  ChainType,
+} from '.'
 
 export enum UserStatus {
   ACTIVE = 'ACTIVE',
@@ -22,6 +23,7 @@ export enum UserRole {
 export interface User {
   uid: string
   role: UserRole
+  chainType: ChainType
   address: string
   receiverAddress?: string
   userName?: string
@@ -34,6 +36,10 @@ export interface User {
   date: number
   status: UserStatus
   apiKey?: string
+}
+
+export interface EVMUser extends User {
+  chainType: ChainType.EVM
 }
 
 export type TokenBalances = TokenAmount[]
