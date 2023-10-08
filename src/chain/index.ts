@@ -1,5 +1,6 @@
 export * from './wagmi'
 export * from './dynamic'
+export * from './constants'
 import type {
   ChainId,
   ChainKey,
@@ -12,7 +13,6 @@ import type {
 import { SterilExtendedWagmiChain } from '../sterilize'
 
 export interface ChainBase {
-  addressPatterns: string[]
   key: ChainKey
   chainType: ChainType
   name: string
@@ -49,6 +49,7 @@ export interface ExtendedEVMChain extends EVMChain {
 //==========SOLANA===========
 export interface SolanaChain extends ChainBase {
   chainType: ChainType.SOL
+  rpcUrls: string[]
 }
 
 export interface ExtendedSolanaChain extends SolanaChain {

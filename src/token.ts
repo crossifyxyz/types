@@ -1,7 +1,7 @@
-import { ChainId, CoinKey } from '.'
+import { CoinKey } from '.'
 
 export interface BaseToken {
-  chainId: ChainId
+  chainId: number
   address: string
 }
 export interface StaticToken extends BaseToken {

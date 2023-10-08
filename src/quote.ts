@@ -1,4 +1,4 @@
-import { Token, TransactionType, SterilRoute, Currency } from '.'
+import { Token, TransactionType, SterilRoute, Currency, ChainId } from '.'
 
 export type EthersTransactionRequest = {
   data: string
@@ -9,6 +9,8 @@ export type EthersTransactionRequest = {
   gasPrice: string
   gasLimit: string
 }
+
+export type SolTransactionRequest = any
 
 export type QuoteBase = {
   toolDetails: {
@@ -43,36 +45,30 @@ export type QuoteLifi = QuoteBase & {
 }
 
 export type QuoteEVM = QuoteBase & {
-  transactionType:
-    | TransactionType.APPROVE
-    | TransactionType.ERC20
-    | TransactionType.NATIVE // You might need to adjust this based on your TransactionType definition
+  transactionType: TransactionType.EVM_NATIVE | TransactionType.ERC20
   transactionRequest: EthersTransactionRequest
   route?: undefined
 }
 
-export type Quote = QuoteLifi | QuoteEVM
+export type QuoteSOL = QuoteBase & {
+  transactionType: TransactionType.SOL_NATIVE | TransactionType.SPL
+  transactionRequest: SolTransactionRequest
+  route?: undefined
+}
+
+export type Quote = QuoteLifi | QuoteEVM | QuoteSOL
 
 //===============REQUEST/RESPONSE=====================
 
-// REQUEST
-export interface BaseQuoteRequest {
-  fromChain: number
-  toChain: number
+export interface QuoteRequest {
+  fromChain: ChainId
+  toChain: ChainId
   fromToken: string
   toToken: string
   fromAddress: string
   toAddress?: string
-}
-
-export interface CurrencyQuoteRequest extends BaseQuoteRequest {
   currency: Currency
 }
-export interface ParsedAmountQuoteRequest extends BaseQuoteRequest {
-  fromAmount: string
-}
-
-export type QuoteRequest = CurrencyQuoteRequest | ParsedAmountQuoteRequest
 
 // RESPONSE
 export type QuoteResponse = Quote
