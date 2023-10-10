@@ -1,6 +1,5 @@
 export * from './wagmi'
 export * from './dynamic'
-export * from './constants'
 import type {
   ChainId,
   ChainKey,

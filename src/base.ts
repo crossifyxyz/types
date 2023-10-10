@@ -1,3 +1,9 @@
+export enum AddressZero {
+  SOL = 'So00000000000000000000000000000000000000000',
+  EVM = '0x0000000000000000000000000000000000000000',
+  LNAT = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+}
+
 export enum ChainType {
   EVM = 'EVM',
   SOL = 'SOL',
