@@ -10,7 +10,11 @@ export type EthersTransactionRequest = {
   gasLimit: string
 }
 
-export type SolTransactionRequest = any
+/**
+ * @value { type: 'Buffer', data: number[] } serilized new Transaction via '@solana/web3.js'
+ * @example use the returned value: Transaction.from(quote.transactionRequest.data)
+ */
+export type SolTransactionRequest = { type: 'Buffer'; data: number[] }
 
 export type QuoteBase = {
   toolDetails: {

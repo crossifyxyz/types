@@ -50,6 +50,7 @@ export interface ExtendedEVMChain extends EVMChain {
 export interface SolanaChain extends ChainBase {
   chainType: ChainType.SOL
   rpcUrls: string[]
+  blockExplorerUrls: string[]
 }
 
 export interface ExtendedSolanaChain extends SolanaChain {
