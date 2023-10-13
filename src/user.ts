@@ -51,6 +51,12 @@ export type UserUpdateRequest = Partial<
 >
 
 // RESPONSES
+export type SessionResponse = {
+  address?: string
+  uid?: string
+  role?: string
+}
+
 export type TokenBalancesResponse = TokenBalances
 
 export interface NestedTokenBalancesResponse {
