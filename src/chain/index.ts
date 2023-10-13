@@ -1,11 +1,15 @@
 export * from './wagmi'
-import type { ChainId, ChainKey, CoinKey, ExtendedWagmiChain, Token } from '..'
+export * from './dynamic'
+import type {
+  ChainId,
+  ChainKey,
+  ChainType,
+  CoinKey,
+  DynamicEvmNetwork,
+  ExtendedWagmiChain,
+  Token,
+} from '..'
 import { SterilExtendedWagmiChain } from '../sterilize'
-
-export enum ChainType {
-  EVM = 'EVM',
-  Solana = 'SOLANA',
-}
 
 export interface ChainBase {
   key: ChainKey
@@ -43,7 +47,9 @@ export interface ExtendedEVMChain extends EVMChain {
 
 //==========SOLANA===========
 export interface SolanaChain extends ChainBase {
-  chainType: ChainType.Solana
+  chainType: ChainType.SOL
+  rpcUrls: string[]
+  blockExplorerUrls: string[]
 }
 
 export interface ExtendedSolanaChain extends SolanaChain {
@@ -64,9 +70,11 @@ export type ChainMeta = {
 export interface SterilChainsResponse {
   crossify: Chain[]
   wagmi: SterilExtendedWagmiChain[]
+  dynamic: DynamicEvmNetwork[]
 }
 
 export interface ChainsResponse {
   crossify: Chain[]
   wagmi: ExtendedWagmiChain[]
+  dynamic: DynamicEvmNetwork[]
 }

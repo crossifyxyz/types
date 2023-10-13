@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/crossifyxyz/types/compare/v0.0.5...v0.0.6) (2023-10-13)
+
+
+### Bug Fixes
+
+* session res, addressZero check ([b4a7feb](https://github.com/crossifyxyz/types/commit/b4a7febbde56ff336ae332ba2435b039d4b47790))
+
 ### [0.0.5](https://github.com/crossifyxyz/types/compare/v0.0.4...v0.0.5) (2023-08-24)
 
 ### [0.0.4](https://github.com/crossifyxyz/types/compare/v0.0.3...v0.0.4) (2023-08-22)

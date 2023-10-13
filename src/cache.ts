@@ -1,5 +1,5 @@
 import { TokenAmount } from '@lifi/types'
-import { Tokens, FiatRate, Chain } from './'
+import { Tokens, FiatRate, Chain } from '.'
 
 export enum CacheType {
   CHAINS = 'CHAINS',

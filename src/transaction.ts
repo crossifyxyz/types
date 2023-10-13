@@ -1,10 +1,11 @@
-import type { PagedList, SterilRoute } from './'
+import type { PagedList, SterilRoute } from '.'
 
 export enum TransactionType {
   LIFI = 'LIFI',
-  APPROVE = 'APPROVE',
-  NATIVE = 'NATIVE',
+  EVM_NATIVE = 'EVM_NATIVE',
+  SOL_NATIVE = 'SOL_NATIVE',
   ERC20 = 'ERC20',
+  SPL = 'SPL',
 }
 
 export enum TransactionScenario {

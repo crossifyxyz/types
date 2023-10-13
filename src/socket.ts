@@ -1,4 +1,4 @@
-import { Payment, Receipt, Transaction } from './'
+import { Payment, Receipt, Transaction } from '.'
 
 export enum SocketEmitType {
   // TX

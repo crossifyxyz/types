@@ -1,4 +1,4 @@
-import type { Currency, PagedList, Token } from './'
+import type { Currency, PagedList, Token } from '.'
 
 // OPTIONS
 export enum PaymentType {
