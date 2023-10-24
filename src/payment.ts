@@ -7,7 +7,6 @@ export enum PaymentType {
 }
 
 export enum PaymentStatus {
-  PENDING = 'PENDING',
   AWAITING = 'AWAITING',
   OPEN = 'OPEN',
   COMPLETED = 'COMPLETED',
@@ -67,4 +66,4 @@ export interface PaymentResponse extends Payment {
   token: Token
 }
 
-export type PagedPaymentResponse = PagedList<Payment>
+export type PagedPaymentResponse = PagedList<PaymentResponse>

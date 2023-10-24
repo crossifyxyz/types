@@ -5,7 +5,7 @@ export enum CurrencyType {
 
 export interface CurrencyBase {
   currencyType: CurrencyType
-  amount: number // Raw Amount (Ex. 1.5)
+  amount: string // Raw Amount (Ex. 1.5)
 }
 
 export interface CurrencyFiat extends CurrencyBase {
