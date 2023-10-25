@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/crossifyxyz/types/compare/v0.0.7...v0.0.8) (2023-10-25)
+
+
+### Features
+
+* lifi quote added alongside route ([d403743](https://github.com/crossifyxyz/types/commit/d403743c7e73018127367792727e683fc275f2e7))
+
 ### [0.0.7](https://github.com/crossifyxyz/types/compare/v0.0.6...v0.0.7) (2023-10-24)
 
 ### [0.0.6](https://github.com/crossifyxyz/types/compare/v0.0.5...v0.0.6) (2023-10-13)
