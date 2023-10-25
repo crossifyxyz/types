@@ -1,4 +1,11 @@
-import { Token, TransactionType, SterilRoute, Currency, ChainId } from '.'
+import {
+  Token,
+  TransactionType,
+  SterilRoute,
+  Currency,
+  ChainId,
+  TransactionScenario,
+} from '.'
 
 export type EthersTransactionRequest = {
   data: string
@@ -33,6 +40,8 @@ export type QuoteBase = {
     fromAddress: string
   }
   estimate: {
+    fromAmount: string
+    toAmount?: string
     executionDuration: number
     fromAmountUSD: number
     toAmountUSD?: number
@@ -42,29 +51,33 @@ export type QuoteBase = {
   }
 }
 
-export type QuoteLifi = QuoteBase & {
-  transactionType: TransactionType.LIFI
-  route: SterilRoute
-  transactionRequest?: undefined
+export type QuoteLifiRoute = QuoteBase & {
+  transactionType: TransactionType.LIFI_ROUTE
+  transactionRequest: SterilRoute
+}
+
+export type QuoteLifiQuote = QuoteBase & {
+  transactionType: TransactionType.LIFI_QUOTE
+  transactionRequest: EthersTransactionRequest
+  estimate: QuoteBase['estimate'] & { approvalAddress: string }
 }
 
 export type QuoteEVM = QuoteBase & {
   transactionType: TransactionType.EVM_NATIVE | TransactionType.ERC20
   transactionRequest: EthersTransactionRequest
-  route?: undefined
 }
 
 export type QuoteSOL = QuoteBase & {
   transactionType: TransactionType.SOL_NATIVE | TransactionType.SPL
   transactionRequest: SolTransactionRequest
-  route?: undefined
 }
 
-export type Quote = QuoteLifi | QuoteEVM | QuoteSOL
+export type Quote = QuoteLifiRoute | QuoteLifiQuote | QuoteEVM | QuoteSOL
 
 //===============REQUEST/RESPONSE=====================
 
 export interface QuoteRequest {
+  transactionScenario: TransactionScenario
   fromChain: ChainId
   toChain: ChainId
   fromToken: string

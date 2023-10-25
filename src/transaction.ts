@@ -1,7 +1,8 @@
 import type { PagedList, SterilRoute } from '.'
 
 export enum TransactionType {
-  LIFI = 'LIFI',
+  LIFI_ROUTE = 'LIFI_ROUTE',
+  LIFI_QUOTE = 'LIFI_QUOTE',
   EVM_NATIVE = 'EVM_NATIVE',
   SOL_NATIVE = 'SOL_NATIVE',
   ERC20 = 'ERC20',
